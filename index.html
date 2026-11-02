@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Rutina gimnasio · Ciclo 4 · Semana 4</title>
+<title>Rutina gimnasio · Ciclo 4 · Semana 5</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -141,7 +141,7 @@
     <h1>Rutina <em>gimnasio</em></h1>
     <div class="goal">
       <div class="chip"><b>60kg</b> → <b>55kg</b></div>
-      <div class="chip">Semana <b id="wNum">4</b></div>
+      <div class="chip">Semana <b id="wNum">5</b></div>
       <div class="chip" id="weeksChip">…</div>
     </div>
   </header>
@@ -160,7 +160,7 @@
 
 <div class="modal" id="modal">
   <div class="sheet">
-    <h3>Resumen Semana <span id="mWeek">4</span></h3>
+    <h3>Resumen Semana <span id="mWeek">5</span></h3>
     <p>Cópialo y pégamelo en el chat para programar tu próxima semana.</p>
     <div class="warn" id="warn"></div>
     <textarea id="summary" readonly></textarea>
@@ -173,42 +173,42 @@
 </div>
 
 <script>
-const PLAN_WEEK=4;
+const PLAN_WEEK=5;
 const DAYS=[
-  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"Running · Fondo",ic:"🏃‍♀️",sub:["10 km suave a 6:00–6:30/km (9,2–10 km/h en trotadora)","Al final: 4 aceleraciones de 20 s · si hay carrera, reemplaza este fondo"]},
+  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"Running · Fondo",ic:"🏃‍♀️",sub:["12 km suave a 6:00–6:45/km (8,9–10 km/h en trotadora)","Al final: 4 aceleraciones de 20 s · si hay carrera, reemplaza este fondo"]},
   {key:1,ab:"Lun",name:"Lunes",type:"gym",title:"Glúteo + Isquios + Core",ex:[
-    {n:"Hip Thrust con pausa de 2s",s:"4×10",w:"52.5kg",r:"90s"},
-    {n:"Zancada inversa con mancuernas",s:"3×10/pierna",w:"12kg/mano",r:"75s"},
-    {n:"Pull-through en polea",s:"3×12",w:"100lb (polea liviana)",r:"60s"},
+    {n:"Hip Thrust con pausa de 2s",s:"4×8-10",w:"55kg",r:"90s"},
+    {n:"Zancada inversa con mancuernas",s:"3×12/pierna",w:"12kg/mano",r:"75s"},
+    {n:"Pull-through en polea",s:"3×12",w:"50lb (polea pesada)",r:"60s"},
     {n:"Curl femoral tumbado",s:"3×10",w:"60lb",r:"60s"},
-    {n:"Abductores en máquina",s:"3×18",w:"95lb",r:"45s"},
-    {n:"Dead bug con peso",s:"3×10/lado",w:"8kg",r:"45s"},
+    {n:"Abductores en máquina",s:"3×20",w:"95lb",r:"45s"},
+    {n:"Dead bug con peso",s:"3×12/lado",w:"8kg",r:"45s"},
   ]},
-  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + Running · Intervalos (corre primero o en otro horario)",run:"10 min suave + 5×1 km a 4:55–5:00/km (12–12,2 km/h) con 2 min de trote suave entre cada uno + 10 min suave",ex:[
-    {n:"Dominadas asistidas",s:"4×8",w:"24kg asist.",r:"90s"},
+  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + Running · Tempo (corre primero o en otro horario)",run:"10 min suave + 3×2 km a 5:10/km (11,6 km/h) con 2 min de trote suave entre cada uno + 10 min suave",ex:[
+    {n:"Dominadas asistidas",s:"4×8",w:"85lb asist.",r:"90s"},
     {n:"Remo con mancuerna a una mano",s:"3×12/lado",w:"12kg",r:"60s"},
     {n:"Press militar con mancuernas sentada",s:"3×12",w:"10kg/mano",r:"75s"},
-    {n:"Jalón agarre neutro",s:"3×12",w:"30kg",r:"60s"},
-    {n:"Elevaciones laterales en polea",s:"3×15",w:"2.5kg (según polea)",r:"45s"},
-    {n:"Extensión de tríceps en polea",s:"3×12",w:"11.25kg",r:"45s"},
+    {n:"Jalón agarre neutro",s:"3×12",w:"70lb",r:"60s"},
+    {n:"Elevaciones laterales en polea",s:"3×8-10",w:"20lb",r:"45s"},
+    {n:"Extensión de tríceps en polea",s:"3×12-15",w:"50lb",r:"45s"},
   ]},
-  {key:3,ab:"Mié",name:"Miércoles",type:"rest",title:"Descanso",ic:"🌿",sub:["Descanso total, o bici suave 45–60 min por plano (opcional)","Sin cerro: hoy es para recuperar"]},
+  {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Intensidad media: mañana tienes pierna"]},
   {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Pierna posterior + Core",ex:[
-    {n:"Sentadilla sumo con kettlebell",s:"3×12",w:"24kg",r:"75s"},
-    {n:"Peso muerto rumano con barra",s:"3×8",w:"37.5kg",r:"90s"},
+    {n:"Sentadilla sumo con kettlebell",s:"3×12",w:"60lb (o 55lb ×15)",r:"75s"},
+    {n:"Peso muerto rumano con barra",s:"3×10",w:"37.5kg",r:"90s"},
     {n:"Hiperextensiones (glúteo)",s:"3×10",w:"18kg",r:"60s"},
-    {n:"Patada de glúteo en polea",s:"3×15/pierna",w:"150lb (polea liviana)",r:"45s"},
-    {n:"Pallof press",s:"3×15/lado",w:"16kg",r:"45s"},
+    {n:"Patada de glúteo en polea",s:"3×10/pierna",w:"70lb (polea pesada)",r:"45s"},
+    {n:"Pallof press",s:"3×12/lado",w:"20kg",r:"45s"},
     {n:"Rueda abdominal desde rodillas",s:"4×12",w:"peso corporal",r:"60s"},
   ]},
   {key:5,ab:"Vie",name:"Viernes",type:"gym",title:"Hombro + Espalda",ex:[
-    {n:"Press Arnold",s:"3×10",w:"10kg/mano",r:"75s"},
-    {n:"Remo sentado agarre ancho",s:"3×10",w:"28kg",r:"60s"},
-    {n:"Pullover en polea alta",s:"3×12",w:"60lb (polea pesada)",r:"60s"},
-    {n:"Elevaciones laterales",s:"3×12",w:"7kg",r:"45s"},
-    {n:"Face pulls",s:"3×15",w:"60lb",r:"45s"},
+    {n:"Press Arnold",s:"3×12",w:"20lb/mano",r:"75s"},
+    {n:"Remo sentado agarre ancho",s:"3×12",w:"28kg",r:"60s"},
+    {n:"Pullover en polea alta",s:"3×12",w:"60lb",r:"60s"},
+    {n:"Elevaciones laterales",s:"3×12",w:"15lb",r:"45s"},
+    {n:"Face pulls",s:"3×15",w:"65–70lb",r:"45s"},
   ]},
-  {key:6,ab:"Sáb",name:"Sábado",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Intensidad media: mañana tienes fondo"]},
+  {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Descanso",ic:"🌿",sub:["Descanso total, o caminata suave","Mañana tienes fondo: come bien e hidrátate"]},
 ];
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 
@@ -313,7 +313,7 @@ function render(){
   if(d.run){
     const b=document.createElement('div');b.className='single';b.style.marginTop='14px';
     const f=(k,lab,ph,mode,full)=>`<div class="field${full?' full':''}"><label>${lab}</label><input data-f="${k}" inputmode="${mode}" placeholder="${ph}" value="${esc(gw(key(d.key,'c',k)))}"></div>`;
-    b.innerHTML=`<div class="ic">🏃‍♀️</div><h3>Running · Intervalos</h3><p>${d.run}</p><div class="clog">${f('dist','Distancia (km)','ej: 5','decimal')}${f('tiempo','Tiempo','ej: 30:00','text')}${f('nota','Cómo te sentiste','ej: piernas sueltas','text',true)}</div>`;
+    b.innerHTML=`<div class="ic">🏃‍♀️</div><h3>Running · Tempo</h3><p>${d.run}</p><div class="clog">${f('dist','Distancia (km)','ej: 5','decimal')}${f('tiempo','Tiempo','ej: 30:00','text')}${f('nota','Cómo te sentiste','ej: piernas sueltas','text',true)}</div>`;
     b.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',()=>sw(key(d.key,'c',inp.dataset.f),inp.value)));
     c.appendChild(b);
   }
@@ -385,7 +385,7 @@ document.getElementById('clearBtn').onclick=()=>{
 };
 
 (function(){const goal=new Date(2027,2,1),t=new Date();const w=Math.max(0,Math.ceil((goal-t)/(7*864e5)));document.getElementById('weeksChip').innerHTML=`<b>${w}</b> sem. a marzo`;})();
-document.getElementById('legend').innerHTML='Ciclo 4 · Semana 4: running 2×/semana enfocado en los 10k y la meta sub-50 (martes intervalos, domingo fondo), box el sábado y miércoles libre. Toca ⏱ para iniciar el descanso. Exporta al final de la semana.';
+document.getElementById('legend').innerHTML='Ciclo 4 · Semana 5: última semana de carga antes de la descarga. Pesos según tus máquinas actuales (varios en lb). Martes tempo, miércoles box, sábado descanso y domingo fondo. Toca ⏱ para iniciar el descanso. Exporta al final de la semana.';
 render();
 </script>
 </body>
