@@ -175,7 +175,7 @@
 <script>
 const PLAN_WEEK=5;
 const DAYS=[
-  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"Running · Fondo",ic:"🏃‍♀️",sub:["12 km suave a 6:00–6:45/km (8,9–10 km/h en trotadora)","Al final: 4 aceleraciones de 20 s · si hay carrera, reemplaza este fondo"]},
+  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"🏁 Carrera 10k",ic:"🏅",sub:["Calienta 10 min trote suave + 3 aceleraciones cortas","Parte controlada los primeros 3 km · apunta a ~5:05/km"]},
   {key:1,ab:"Lun",name:"Lunes",type:"gym",title:"Glúteo + Isquios + Core",ex:[
     {n:"Hip Thrust con pausa de 2s",s:"4×8-10",w:"55kg",r:"90s"},
     {n:"Zancada inversa con mancuernas",s:"3×12/pierna",w:"12kg/mano",r:"75s"},
@@ -184,7 +184,7 @@ const DAYS=[
     {n:"Abductores en máquina",s:"3×20",w:"95lb",r:"45s"},
     {n:"Dead bug con peso",s:"3×12/lado",w:"8kg",r:"45s"},
   ]},
-  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + Running · Tempo (corre primero o en otro horario)",run:"10 min suave + 3×2 km a 5:10/km (11,6 km/h) con 2 min de trote suave entre cada uno + 10 min suave",ex:[
+  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + Running · Tempo corto (semana de carrera)",run:"10 min suave + 2×2 km a 5:10/km (11,6 km/h) con 2 min de trote suave entre cada uno + 10 min suave · semana de carrera: no agregues la 3ª serie",ex:[
     {n:"Dominadas asistidas",s:"4×8",w:"85lb asist.",r:"90s"},
     {n:"Remo con mancuerna a una mano",s:"3×12/lado",w:"12kg",r:"60s"},
     {n:"Press militar con mancuernas sentada",s:"3×12",w:"10kg/mano",r:"75s"},
@@ -193,11 +193,11 @@ const DAYS=[
     {n:"Extensión de tríceps en polea",s:"3×12-15",w:"50lb",r:"45s"},
   ]},
   {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Intensidad media: mañana tienes pierna"]},
-  {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Pierna posterior + Core",ex:[
-    {n:"Sentadilla sumo con kettlebell",s:"3×12",w:"60lb (o 55lb ×15)",r:"75s"},
-    {n:"Peso muerto rumano con barra",s:"3×10",w:"37.5kg",r:"90s"},
-    {n:"Hiperextensiones (glúteo)",s:"3×10",w:"18kg",r:"60s"},
-    {n:"Patada de glúteo en polea",s:"3×10/pierna",w:"70lb (polea pesada)",r:"45s"},
+  {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Pierna posterior + Core",classNote:"Semana de carrera: pierna en 2 series, mismo peso",ex:[
+    {n:"Sentadilla sumo con kettlebell",s:"2×12",w:"60lb (o 55lb ×15)",r:"75s"},
+    {n:"Peso muerto rumano con barra",s:"2×8",w:"37.5kg",r:"90s"},
+    {n:"Hiperextensiones (glúteo)",s:"2×10",w:"18kg",r:"60s"},
+    {n:"Patada de glúteo en polea",s:"2×10/pierna",w:"70lb (polea pesada)",r:"45s"},
     {n:"Pallof press",s:"3×12/lado",w:"20kg",r:"45s"},
     {n:"Rueda abdominal desde rodillas",s:"4×12",w:"peso corporal",r:"60s"},
   ]},
@@ -208,7 +208,7 @@ const DAYS=[
     {n:"Elevaciones laterales",s:"3×12",w:"15lb",r:"45s"},
     {n:"Face pulls",s:"3×15",w:"65–70lb",r:"45s"},
   ]},
-  {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Descanso",ic:"🌿",sub:["Descanso total, o caminata suave","Mañana tienes fondo: come bien e hidrátate"]},
+  {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Descanso pre-carrera",ic:"🌿",sub:["Descanso, o 15 min de trote muy suave + 3 aceleraciones cortas","Cena con carbohidratos, hidrátate y duerme bien"]},
 ];
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 
@@ -385,7 +385,7 @@ document.getElementById('clearBtn').onclick=()=>{
 };
 
 (function(){const goal=new Date(2027,2,1),t=new Date();const w=Math.max(0,Math.ceil((goal-t)/(7*864e5)));document.getElementById('weeksChip').innerHTML=`<b>${w}</b> sem. a marzo`;})();
-document.getElementById('legend').innerHTML='Ciclo 4 · Semana 5: última semana de carga antes de la descarga. Pesos según tus máquinas actuales (varios en lb). Martes tempo, miércoles box, sábado descanso y domingo fondo. Toca ⏱ para iniciar el descanso. Exporta al final de la semana.';
+document.getElementById('legend').innerHTML='Ciclo 4 · Semana 5: última semana de carga antes de la descarga. Pesos según tus máquinas actuales (varios en lb). Semana de carrera: martes tempo corto, miércoles box, jueves pierna en 2 series, sábado descanso y 10k el domingo. Toca ⏱ para iniciar el descanso. Exporta al final de la semana.';
 render();
 </script>
 </body>
