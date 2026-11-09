@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Rutina gimnasio · Ciclo 4 · Semana 5</title>
+<title>Rutina gimnasio · Ciclo 4 · Semana 6 · Descarga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -137,11 +137,11 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Ciclo 4</div>
+    <div class="eyebrow">Ciclo 4 · Semana de descarga</div>
     <h1>Rutina <em>gimnasio</em></h1>
     <div class="goal">
       <div class="chip"><b>60kg</b> → <b>55kg</b></div>
-      <div class="chip">Semana <b id="wNum">5</b></div>
+      <div class="chip">Semana <b id="wNum">6</b></div>
       <div class="chip" id="weeksChip">…</div>
     </div>
   </header>
@@ -160,7 +160,7 @@
 
 <div class="modal" id="modal">
   <div class="sheet">
-    <h3>Resumen Semana <span id="mWeek">5</span></h3>
+    <h3>Resumen Semana <span id="mWeek">6</span></h3>
     <p>Cópialo y pégamelo en el chat para programar tu próxima semana.</p>
     <div class="warn" id="warn"></div>
     <textarea id="summary" readonly></textarea>
@@ -173,42 +173,42 @@
 </div>
 
 <script>
-const PLAN_WEEK=5;
+const PLAN_WEEK=6;
 const DAYS=[
-  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"🏁 Carrera 10k",ic:"🏅",sub:["Calienta 10 min trote suave + 3 aceleraciones cortas","Parte controlada los primeros 3 km · apunta a ~5:05/km"]},
+  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"🏁 Carrera 10k",ic:"🏅",sub:["Calienta 10 min trote suave + 3 aceleraciones cortas · zapatillas ya probadas","Corre por sensaciones (~5:05/km si la rodilla está bien) · si duele, baja el ritmo o para"]},
   {key:1,ab:"Lun",name:"Lunes",type:"gym",title:"Glúteo + Isquios + Core",ex:[
-    {n:"Hip Thrust con pausa de 2s",s:"4×8-10",w:"55kg",r:"90s"},
-    {n:"Zancada inversa con mancuernas",s:"3×12/pierna",w:"12kg/mano",r:"75s"},
-    {n:"Pull-through en polea",s:"3×12",w:"50lb (polea pesada)",r:"60s"},
-    {n:"Curl femoral tumbado",s:"3×10",w:"60lb",r:"60s"},
-    {n:"Abductores en máquina",s:"3×20",w:"95lb",r:"45s"},
-    {n:"Dead bug con peso",s:"3×12/lado",w:"8kg",r:"45s"},
+    {n:"Hip Thrust con pausa de 2s",s:"4×8",w:"45kg",r:"90s"},
+    {n:"Zancada inversa con mancuernas",s:"3×10/pierna",w:"10kg/mano",r:"75s"},
+    {n:"Pull-through en polea",s:"3×10",w:"40lb (polea pesada)",r:"60s"},
+    {n:"Curl femoral tumbado",s:"3×10",w:"45lb",r:"60s"},
+    {n:"Abductores en máquina",s:"3×15",w:"75lb",r:"45s"},
+    {n:"Dead bug con peso",s:"3×10/lado",w:"6kg",r:"45s"},
   ]},
-  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + Running · Tempo corto (semana de carrera)",run:"10 min suave + 2×2 km a 5:10/km (11,6 km/h) con 2 min de trote suave entre cada uno + 10 min suave · semana de carrera: no agregues la 3ª serie",ex:[
-    {n:"Dominadas asistidas",s:"4×8",w:"85lb asist.",r:"90s"},
-    {n:"Remo con mancuerna a una mano",s:"3×12/lado",w:"12kg",r:"60s"},
-    {n:"Press militar con mancuernas sentada",s:"3×12",w:"10kg/mano",r:"75s"},
-    {n:"Jalón agarre neutro",s:"3×12",w:"70lb",r:"60s"},
-    {n:"Elevaciones laterales en polea",s:"3×8-10",w:"20lb",r:"45s"},
-    {n:"Extensión de tríceps en polea",s:"3×12-15",w:"50lb",r:"45s"},
+  {key:2,ab:"Mar",name:"Martes",type:"gym",title:"Espalda + Hombro",classNote:"🏃‍♀️ + 30 min de trote suave (o bici si la rodilla molesta)",run:"30 min a 6:30–7:00/km (8,6–9,2 km/h) + 4 aceleraciones de 20 s al final (solo si la rodilla está bien) · es tu prueba de rodilla antes del domingo",ex:[
+    {n:"Dominadas asistidas",s:"4×8",w:"100lb asist.",r:"90s"},
+    {n:"Remo con mancuerna a una mano",s:"3×10/lado",w:"10kg",r:"60s"},
+    {n:"Press militar con mancuernas sentada",s:"3×10",w:"8kg/mano",r:"75s"},
+    {n:"Jalón agarre neutro",s:"3×10",w:"55lb",r:"60s"},
+    {n:"Elevaciones laterales en polea",s:"3×10",w:"5lb (polea pesada)",r:"45s"},
+    {n:"Extensión de tríceps en polea",s:"3×10",w:"17.5lb (polea pesada)",r:"45s"},
   ]},
-  {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Intensidad media: mañana tienes pierna"]},
-  {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Pierna posterior + Core",classNote:"Semana de carrera: pierna en 2 series, mismo peso",ex:[
-    {n:"Sentadilla sumo con kettlebell",s:"2×12",w:"60lb (o 55lb ×15)",r:"75s"},
-    {n:"Peso muerto rumano con barra",s:"2×8",w:"37.5kg",r:"90s"},
-    {n:"Hiperextensiones (glúteo)",s:"2×10",w:"18kg",r:"60s"},
-    {n:"Patada de glúteo en polea",s:"2×10/pierna",w:"70lb (polea pesada)",r:"45s"},
-    {n:"Pallof press",s:"3×12/lado",w:"20kg",r:"45s"},
-    {n:"Rueda abdominal desde rodillas",s:"4×12",w:"peso corporal",r:"60s"},
+  {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box suave",ic:"🥊",sub:["Clase a ritmo cómodo, foco en técnica","Descarga: sin ir al máximo"]},
+  {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Pierna posterior + Core",classNote:"Semana de carrera: pierna en 2 series",ex:[
+    {n:"Sentadilla sumo con kettlebell",s:"2×10",w:"20–22kg",r:"75s"},
+    {n:"Peso muerto rumano con barra",s:"2×8",w:"32.5kg",r:"90s"},
+    {n:"Hiperextensiones (glúteo)",s:"2×10",w:"14kg",r:"60s"},
+    {n:"Patada de glúteo en polea",s:"2×10/pierna",w:"37.5lb (polea pesada)",r:"45s"},
+    {n:"Pallof press",s:"3×10/lado",w:"17.5lb (polea pesada)",r:"45s"},
+    {n:"Rueda abdominal desde rodillas",s:"3×10",w:"peso corporal",r:"60s"},
   ]},
   {key:5,ab:"Vie",name:"Viernes",type:"gym",title:"Hombro + Espalda",ex:[
-    {n:"Press Arnold",s:"3×12",w:"20lb/mano",r:"75s"},
-    {n:"Remo sentado agarre ancho",s:"3×12",w:"28kg",r:"60s"},
-    {n:"Pullover en polea alta",s:"3×12",w:"60lb",r:"60s"},
-    {n:"Elevaciones laterales",s:"3×12",w:"15lb",r:"45s"},
-    {n:"Face pulls",s:"3×15",w:"65–70lb",r:"45s"},
+    {n:"Press Arnold",s:"3×10",w:"15lb/mano",r:"75s"},
+    {n:"Remo sentado agarre ancho",s:"3×10",w:"22kg",r:"60s"},
+    {n:"Pullover en polea alta",s:"3×10",w:"45lb",r:"60s"},
+    {n:"Elevaciones laterales",s:"3×10",w:"10lb",r:"45s"},
+    {n:"Face pulls",s:"3×10",w:"55lb",r:"45s"},
   ]},
-  {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Descanso pre-carrera",ic:"🌿",sub:["Descanso, o 15 min de trote muy suave + 3 aceleraciones cortas","Cena con carbohidratos, hidrátate y duerme bien"]},
+  {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Descanso pre-carrera",ic:"🌿",sub:["Descanso, o 15 min de trote muy suave + 3 aceleraciones","Cena con carbohidratos, hidrátate y duerme bien (sin fiesta 😉)"]},
 ];
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
 
@@ -313,7 +313,7 @@ function render(){
   if(d.run){
     const b=document.createElement('div');b.className='single';b.style.marginTop='14px';
     const f=(k,lab,ph,mode,full)=>`<div class="field${full?' full':''}"><label>${lab}</label><input data-f="${k}" inputmode="${mode}" placeholder="${ph}" value="${esc(gw(key(d.key,'c',k)))}"></div>`;
-    b.innerHTML=`<div class="ic">🏃‍♀️</div><h3>Running · Tempo</h3><p>${d.run}</p><div class="clog">${f('dist','Distancia (km)','ej: 5','decimal')}${f('tiempo','Tiempo','ej: 30:00','text')}${f('nota','Cómo te sentiste','ej: piernas sueltas','text',true)}</div>`;
+    b.innerHTML=`<div class="ic">🏃‍♀️</div><h3>Trote suave</h3><p>${d.run}</p><div class="clog">${f('dist','Distancia (km)','ej: 5','decimal')}${f('tiempo','Tiempo','ej: 30:00','text')}${f('nota','Cómo te sentiste','ej: piernas sueltas','text',true)}</div>`;
     b.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',()=>sw(key(d.key,'c',inp.dataset.f),inp.value)));
     c.appendChild(b);
   }
@@ -385,7 +385,7 @@ document.getElementById('clearBtn').onclick=()=>{
 };
 
 (function(){const goal=new Date(2027,2,1),t=new Date();const w=Math.max(0,Math.ceil((goal-t)/(7*864e5)));document.getElementById('weeksChip').innerHTML=`<b>${w}</b> sem. a marzo`;})();
-document.getElementById('legend').innerHTML='Ciclo 4 · Semana 5: última semana de carga antes de la descarga. Pesos según tus máquinas actuales (varios en lb). Semana de carrera: martes tempo corto, miércoles box, jueves pierna en 2 series, sábado descanso y 10k el domingo. Toca ⏱ para iniciar el descanso. Exporta al final de la semana.';
+document.getElementById('legend').innerHTML='Descarga: mismos ejercicios y reps de la Semana 5, con pesos ~20% más bajos. Termina cada serie sintiendo que te quedaban 3–4 reps. Running solo suave, sin series, y 10k el domingo. Si la rodilla molesta o se hincha, cambia el trote por bici. Exporta al final de la semana.';
 render();
 </script>
 </body>
