@@ -185,7 +185,14 @@ const DAYS=[
     {n:"Elevación de rodillas en paralelas",s:"3×10",w:"peso corporal",r:"60s"},
   ]},
   {key:2,ab:"Mar",name:"Martes",type:"cardio",title:"Running · 30 min suave",ic:"🏃‍♀️",sub:["30 min a 6:30–7:00/km (8,6–9,2 km/h)","+ 4 aceleraciones de 20 s al final, si la rodilla está bien"]},
-  {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Mañana tienes pierna: intensidad media"]},
+  {key:3,ab:"Mié",name:"Miércoles",type:"gym",title:"Gym 2 · Superior A · Espalda",classNote:"🥊 + Box — gym primero, clase después (o en otro horario). Mañana tienes pierna: box a intensidad media",ex:[
+    {n:"Dominadas asistidas",s:"4×8",w:"80lb asist.",r:"90s"},
+    {n:"Remo con pecho apoyado (máquina o banco)",s:"3×8",w:"calibrar (~12kg/mano en banco)",r:"75s"},
+    {n:"Press militar con mancuernas sentada",s:"3×8",w:"10kg/mano",r:"75s"},
+    {n:"Jalón agarre ancho",s:"3×10",w:"65lb",r:"60s"},
+    {n:"Elevaciones laterales en polea",s:"3×10",w:"10lb (polea pesada)",r:"45s"},
+    {n:"Superserie: curl martillo + tríceps en polea",s:"3×10",w:"7kg/mano · 25lb (polea pesada)",r:"60s"},
+  ]},
   {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Gym 3 · Pierna B · Cadena posterior + Core",ex:[
     {n:"Prensa con pies altos",s:"3×10",w:"60kg",r:"90s"},
     {n:"Buenos días con barra",s:"3×8",w:"27.5kg",r:"75s"},
@@ -379,7 +386,7 @@ document.getElementById('clearBtn').onclick=()=>{
 };
 
 (function(){const goal=new Date(2027,2,1),t=new Date();const w=Math.max(0,Math.ceil((goal-t)/(7*864e5)));document.getElementById('weeksChip').innerHTML=`<b>${w}</b> sem. a marzo`;})();
-document.getElementById('legend').innerHTML='Ciclo 5 · Semana 1: fuerza pesada (máx. 10 reps, abductores 15) para conservar músculo mientras bajas grasa. Los pesos «calibrar» son ejercicios nuevos: parte conservadora y registra lo real. Meta diaria: 8–10 mil pasos. Semana: lun gym 1 · mar running · mié box · jue gym 3 · vie gym 4 · sáb off · dom running. Toca ⏱ para iniciar el descanso y exporta al final de la semana.';
+document.getElementById('legend').innerHTML='Ciclo 5 · Semana 1: fuerza pesada (máx. 10 reps, abductores 15) para conservar músculo mientras bajas grasa. Los pesos «calibrar» son ejercicios nuevos: parte conservadora y registra lo real. Meta diaria: 8–10 mil pasos. Semana: lun gym 1 · mar running · mié gym 2 + box · jue gym 3 · vie gym 4 · sáb off · dom running. Toca ⏱ para iniciar el descanso y exporta al final de la semana.';
 render();
 </script>
 </body>
