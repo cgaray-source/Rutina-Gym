@@ -175,14 +175,7 @@
 <script>
 const PLAN_WEEK=1;
 const DAYS=[
-  {key:0,ab:"Dom",name:"Domingo",type:"gym",title:"Gym 4 · Superior B · Hombro + Espalda",classNote:"🏃‍♀️ + Fondo progresivo (corre primero o en otro horario)",runTitle:"Running · Fondo progresivo",run:"10 km: 8 km a 6:00–6:30/km (9,2–10 km/h) + últimos 2 km a 5:10/km (11,6 km/h) · si la rodilla molesta, todo suave",ex:[
-    {n:"Press inclinado con mancuernas",s:"3×8",w:"10kg/mano (calibrar)",r:"75s"},
-    {n:"Remo a una mano en polea baja",s:"3×10/lado",w:"calibrar (~12kg)",r:"60s"},
-    {n:"Pullover en polea alta",s:"3×10",w:"65lb",r:"60s"},
-    {n:"Elevaciones laterales con mancuerna",s:"3×10",w:"15–17.5lb",r:"45s"},
-    {n:"Pájaros con mancuernas boca abajo en banco inclinado",s:"3×10",w:"4kg/mano",r:"45s"},
-    {n:"Plancha lateral",s:"3×30s/lado",w:"peso corporal",r:"45s"},
-  ]},
+  {key:0,ab:"Dom",name:"Domingo",type:"cardio",title:"Running · Fondo progresivo",ic:"🏃‍♀️",sub:["10 km: 8 km a 6:00–6:30/km (9,2–10 km/h) + últimos 2 km a 5:10/km (11,6 km/h)","Si la rodilla molesta: todo suave o bici"]},
   {key:1,ab:"Lun",name:"Lunes",type:"gym",title:"Gym 1 · Pierna A · Glúteo + Isquios",ex:[
     {n:"Hip thrust con barra",s:"4×8",w:"57.5kg",r:"90s"},
     {n:"Peso muerto convencional con barra",s:"3×6-8",w:"40–45kg (calibrar)",r:"2min"},
@@ -192,14 +185,7 @@ const DAYS=[
     {n:"Elevación de rodillas en paralelas",s:"3×10",w:"peso corporal",r:"60s"},
   ]},
   {key:2,ab:"Mar",name:"Martes",type:"cardio",title:"Running · 30 min suave",ic:"🏃‍♀️",sub:["30 min a 6:30–7:00/km (8,6–9,2 km/h)","+ 4 aceleraciones de 20 s al final, si la rodilla está bien"]},
-  {key:3,ab:"Mié",name:"Miércoles",type:"gym",title:"Gym 2 · Superior A · Espalda",ex:[
-    {n:"Dominadas asistidas",s:"4×8",w:"80lb asist.",r:"90s"},
-    {n:"Remo con pecho apoyado (máquina o banco)",s:"3×8",w:"calibrar (~12kg/mano en banco)",r:"75s"},
-    {n:"Press militar con mancuernas sentada",s:"3×8",w:"10kg/mano",r:"75s"},
-    {n:"Jalón agarre ancho",s:"3×10",w:"65lb",r:"60s"},
-    {n:"Elevaciones laterales en polea",s:"3×10",w:"10lb (polea pesada)",r:"45s"},
-    {n:"Superserie: curl martillo + tríceps en polea",s:"3×10",w:"7kg/mano · 25lb (polea pesada)",r:"60s"},
-  ]},
+  {key:3,ab:"Mié",name:"Miércoles",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Mañana tienes pierna: intensidad media"]},
   {key:4,ab:"Jue",name:"Jueves",type:"gym",title:"Gym 3 · Pierna B · Cadena posterior + Core",ex:[
     {n:"Prensa con pies altos",s:"3×10",w:"60kg",r:"90s"},
     {n:"Buenos días con barra",s:"3×8",w:"27.5kg",r:"75s"},
@@ -208,7 +194,14 @@ const DAYS=[
     {n:"Pallof press",s:"3×10/lado",w:"25lb (polea pesada)",r:"45s"},
     {n:"Rueda abdominal desde rodillas",s:"3×10",w:"peso corporal",r:"60s"},
   ]},
-  {key:5,ab:"Vie",name:"Viernes",type:"cardio",title:"Box",ic:"🥊",sub:["Tu clase de box","Ayer tuviste pierna: intensidad media"]},
+  {key:5,ab:"Vie",name:"Viernes",type:"gym",title:"Gym 4 · Superior B · Hombro + Espalda",ex:[
+    {n:"Press inclinado con mancuernas",s:"3×8",w:"10kg/mano (calibrar)",r:"75s"},
+    {n:"Remo a una mano en polea baja",s:"3×10/lado",w:"calibrar (~12kg)",r:"60s"},
+    {n:"Pullover en polea alta",s:"3×10",w:"65lb",r:"60s"},
+    {n:"Elevaciones laterales con mancuerna",s:"3×10",w:"15–17.5lb",r:"45s"},
+    {n:"Pájaros con mancuernas boca abajo en banco inclinado",s:"3×10",w:"4kg/mano",r:"45s"},
+    {n:"Plancha lateral",s:"3×30s/lado",w:"peso corporal",r:"45s"},
+  ]},
   {key:6,ab:"Sáb",name:"Sábado",type:"rest",title:"Off",ic:"🌿",sub:["Descanso","Suma pasos: meta 8–10 mil"]},
 ];
 const CHECK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>';
@@ -386,7 +379,7 @@ document.getElementById('clearBtn').onclick=()=>{
 };
 
 (function(){const goal=new Date(2027,2,1),t=new Date();const w=Math.max(0,Math.ceil((goal-t)/(7*864e5)));document.getElementById('weeksChip').innerHTML=`<b>${w}</b> sem. a marzo`;})();
-document.getElementById('legend').innerHTML='Ciclo 5 · Semana 1: fuerza pesada (máx. 10 reps, abductores 15) para conservar músculo mientras bajas grasa. Los pesos «calibrar» son ejercicios nuevos: parte conservadora y registra lo real. Meta diaria: 8–10 mil pasos. Semana: lun gym 1 · mar running · mié gym 2 · jue gym 3 · vie box · sáb off · dom gym 4 + running. Toca ⏱ para iniciar el descanso y exporta al final de la semana.';
+document.getElementById('legend').innerHTML='Ciclo 5 · Semana 1: fuerza pesada (máx. 10 reps, abductores 15) para conservar músculo mientras bajas grasa. Los pesos «calibrar» son ejercicios nuevos: parte conservadora y registra lo real. Meta diaria: 8–10 mil pasos. Semana: lun gym 1 · mar running · mié box · jue gym 3 · vie gym 4 · sáb off · dom running. Toca ⏱ para iniciar el descanso y exporta al final de la semana.';
 render();
 </script>
 </body>
